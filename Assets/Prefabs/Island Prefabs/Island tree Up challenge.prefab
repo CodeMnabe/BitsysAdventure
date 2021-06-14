@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4669590022358870507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -76.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 55.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159887696733733022, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535005482093730340, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
+      propertyPath: m_Name
+      value: Island tree Up challenge
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d21c645ce8f77641b22f2abc591dc0f, type: 3}
