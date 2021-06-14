@@ -23,9 +23,8 @@ public class PushableBlock : MonoBehaviour
 
             Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
 
-            myRb.velocity = pushDir * pushPower;
-
-            Debug.Log(myRb.name);
+            float power = pushPower / hit.gameObject.GetComponent<ObjectMass>().myMass;
+            myRb.velocity = pushDir * power;
         }
     }
 }
