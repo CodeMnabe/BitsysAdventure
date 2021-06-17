@@ -36,6 +36,9 @@ public class CollectibleWorld : MonoBehaviour
             case TypeOfCollectible.Heavy_Challenge:
                 gameObject.GetComponent<MeshRenderer>().material = myMaterial[6];
                 break;
+            case TypeOfCollectible.Reach_the_End:
+                gameObject.GetComponent<MeshRenderer>().material = myMaterial[7];
+                break;
             default:
                 break;
         }
