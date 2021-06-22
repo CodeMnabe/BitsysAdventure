@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI indicationText;
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
@@ -15,6 +17,7 @@ public class Interactable : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
+                indicationText.text = "";
                 interactAction.Invoke();
             }
         }    
@@ -24,6 +27,7 @@ public class Interactable : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             isInRange = true;
+            indicationText.text = "Press " + interactKey.ToString() + " to interact";
         }    
     }
 
@@ -31,6 +35,7 @@ public class Interactable : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             isInRange = false;
+            indicationText.text = "";
         }    
     }
 }

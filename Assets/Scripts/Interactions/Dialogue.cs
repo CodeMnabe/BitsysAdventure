@@ -29,6 +29,8 @@ public class Dialogue : MonoBehaviour
             textHasStarted = true;
             StartCoroutine(Type());
             stopPlayer.GetComponent<ThirdPersonMovement>().isTalkingToSomeone = true;
+            stopPlayer.GetComponent<ThirdPersonMovement>().myAnimator.ResetTrigger("Run");
+            stopPlayer.GetComponent<ThirdPersonMovement>().myAnimator.SetTrigger("Idle");
         }
         else if(textHasStarted)
         {

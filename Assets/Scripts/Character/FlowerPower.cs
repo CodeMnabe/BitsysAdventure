@@ -10,6 +10,9 @@ public class FlowerPower : MonoBehaviour
     private CharacterController charController;
     private ThirdPersonMovement playerScript;
     public Flower currentFlower;
+
+    [SerializeField] private Material backMaterial;
+    [SerializeField] private Color[] myColors;
     public enum Flower
     {
         Dahlia,//neutral flower
@@ -35,21 +38,25 @@ public class FlowerPower : MonoBehaviour
                 ResetJumpHeight();
                 ResetWeight();
                 ResetScale();
+                backMaterial.color = myColors[0];
                 break;
             case Flower.Tulip:
                 ResetJumpHeight();
                 weight = 2;
                 myTransform.localScale = new Vector3(1 * 1.2f, 1 * 1.2f, 1 * 1.2f);
+                backMaterial.color = myColors[1];
                 break;
             case Flower.Pansie:
                 ResetJumpHeight();
                 weight = 0;
                 myTransform.localScale = new Vector3(1 / 1.2f, 1 / 1.2f, 1 / 1.2f);
+                backMaterial.color = myColors[2];
                 break;
             case Flower.Rose:
                 ResetScale();
                 ResetWeight();
                 playerScript.jumpHeight = playerScript.startJumpHeight * 1.8f;
+                backMaterial.color = myColors[3];
                 break;
             default:
                 break;

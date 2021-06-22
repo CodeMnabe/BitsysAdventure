@@ -14,6 +14,7 @@ public class Wind : MonoBehaviour
         {
             other.GetComponent<ThirdPersonMovement>().characterVelocityMomentum += Vector3.up * 5;
             other.GetComponent<ThirdPersonMovement>().GravityStop();
+            other.GetComponent<ThirdPersonMovement>().myAnimator.SetTrigger("Wind");
         }
     }
 

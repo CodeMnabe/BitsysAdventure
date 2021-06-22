@@ -20,6 +20,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     [SerializeField] private Respawning respawnManager;
     [SerializeField] public CharacterController controller;
+    public Animator myAnimator;
     [SerializeField] private Transform cam;
     [SerializeField] private Image crossHairImage;
 
@@ -45,6 +46,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("Grappling Hook")]
     [SerializeField] private LayerMask whatIsHookable;
     [SerializeField] private Transform hookShotTransform;
+    [SerializeField] private Transform hookShotTransform2;
     private Vector3 hookShotPosition;
     private float hookShotSize;
     [SerializeField] private float minThrowDis = 30f;
@@ -187,9 +189,11 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         ChangeCrossHairColor(Color.black);
         hookShotTransform.LookAt(hookShotPosition);
+        hookShotTransform2.LookAt(hookShotPosition);
         float hookShotSpeed = 250f;
         hookShotSize += hookShotSpeed * Time.deltaTime;
         hookShotTransform.localScale = new Vector3(1, 1, hookShotSize);
+        hookShotTransform2.localScale = new Vector3(1, 1, hookShotSize);
 
 
         if (hookShotSize >= Vector3.Distance(transform.position, hookShotPosition))
@@ -197,13 +201,19 @@ public class ThirdPersonMovement : MonoBehaviour
             float targetAngle = Mathf.Atan2(hookShotPosition.x - transform.position.x, hookShotPosition.z - transform.position.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             state = State.HookShotFlyingPlayer;
+            myAnimator.ResetTrigger("Run");
+            myAnimator.ResetTrigger("Idle");
+            myAnimator.ResetTrigger("Wind");
+            myAnimator.SetTrigger("BeingPushed");
         }
     }
 
     private void HookShotMovement()
     {
         hookShotTransform.LookAt(hookShotPosition);
+        hookShotTransform2.LookAt(hookShotPosition);
         hookShotTransform.localScale = new Vector3(1, 1, Vector3.Distance(hookShotTransform.position, hookShotPosition));
+        hookShotTransform2.localScale = new Vector3(1, 1, Vector3.Distance(hookShotTransform.position, hookShotPosition));
 
         Vector3 hookShotDir = (hookShotPosition - transform.position).normalized;
 
@@ -220,10 +230,13 @@ public class ThirdPersonMovement : MonoBehaviour
             state = State.Normal;
             ResetGravity();
             DisableHookShot(false);
-        }
+        }       
+
 
         if (TestInputJump())
         {
+            myAnimator.ResetTrigger("BeingPushed");
+            myAnimator.SetTrigger("Jump");
             float extraMomentum = 5f;
             float extraHeight = 10f;
             characterVelocityMomentum = (hookShotDir * hookShotSpeed * extraMomentum);
@@ -238,7 +251,9 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         hookShotSize = 0;
         hookShotTransform.gameObject.SetActive(isBeingUsed);
+        hookShotTransform2.gameObject.SetActive(isBeingUsed);
         hookShotTransform.localScale = new Vector3(1, 1, hookShotSize);
+        hookShotTransform2.localScale = new Vector3(1, 1, hookShotSize);
     }
 
     private void ResetGravity()
@@ -266,6 +281,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             if (direction.magnitude >= 0.1f)
             {
+                myAnimator.ResetTrigger("Idle");
+                myAnimator.SetTrigger("Run");
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, smoothTurnTime);
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -276,9 +293,41 @@ public class ThirdPersonMovement : MonoBehaviour
 
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
             }
+            else
+            {
+                if (isGrounded)
+                {
+                    myAnimator.SetBool("Grounded", true);
+                    myAnimator.ResetTrigger("Run");
+                    myAnimator.SetTrigger("Idle");
+                }
+                else
+                {
+                    myAnimator.ResetTrigger("Idle");
+                    myAnimator.ResetTrigger("Run");
+                    myAnimator.ResetTrigger("Jump");
+                    myAnimator.SetBool("Grounded", false);
+                    myAnimator.SetTrigger("Wind");
+                }
+
+            }
+        }
+        else
+        {
+            myAnimator.ResetTrigger("Run");
+            myAnimator.SetTrigger("Idle");
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (!isGrounded)
+        {
+            myAnimator.ResetTrigger("Idle");
+            myAnimator.ResetTrigger("Run");
+            myAnimator.ResetTrigger("Jump");
+            myAnimator.SetBool("Grounded", false);
+            myAnimator.SetTrigger("Wind");
+        }
 
         if (isGrounded && velocity.y < 0)
         {
@@ -288,7 +337,10 @@ public class ThirdPersonMovement : MonoBehaviour
         if (TestInputJump() && isGrounded)
         {
             Jump();
+
         }
+
+
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -334,6 +386,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Jump()
     {
+        myAnimator.SetBool("Grounded", false);
+        myAnimator.ResetTrigger("Run");
+        myAnimator.ResetTrigger("Idle");
+        myAnimator.SetTrigger("Jump");
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         velocity = Vector3.up + velocity;
