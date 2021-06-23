@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private GameObject stopPlayer;
+    [SerializeField] private GameObject textBackground; 
     [SerializeField] private TextMeshProUGUI displayText;
     [TextArea]
     [SerializeField] private string[] sentences;
@@ -22,8 +24,14 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    private void Awake() {
+        textBackground = GameObject.Find("TextBackground");
+        textBackground.SetActive(false);
+    }
+
     public void StartDialogue()
     {
+        textBackground.SetActive(true);
         if (!textHasStarted)
         {
             textHasStarted = true;
@@ -34,6 +42,7 @@ public class Dialogue : MonoBehaviour
         }
         else if(textHasStarted)
         {
+            StopAllCoroutines();
             NextSentence();
         }
 
@@ -49,6 +58,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            textBackground.SetActive(false);
             stopPlayer.GetComponent<ThirdPersonMovement>().isTalkingToSomeone = false;
             textHasStarted = false;
             index = 0;

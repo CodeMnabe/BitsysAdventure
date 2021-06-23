@@ -230,7 +230,7 @@ public class ThirdPersonMovement : MonoBehaviour
             state = State.Normal;
             ResetGravity();
             DisableHookShot(false);
-        }       
+        }
 
 
         if (TestInputJump())
@@ -281,6 +281,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             if (direction.magnitude >= 0.1f)
             {
+                myAnimator.ResetTrigger("Jump");
+                myAnimator.ResetTrigger("BeingPushed");
                 myAnimator.ResetTrigger("Idle");
                 myAnimator.SetTrigger("Run");
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
@@ -298,6 +300,8 @@ public class ThirdPersonMovement : MonoBehaviour
                 if (isGrounded)
                 {
                     myAnimator.SetBool("Grounded", true);
+                    myAnimator.ResetTrigger("Jump");
+                    myAnimator.ResetTrigger("BeingPushed");
                     myAnimator.ResetTrigger("Run");
                     myAnimator.SetTrigger("Idle");
                 }
@@ -306,6 +310,7 @@ public class ThirdPersonMovement : MonoBehaviour
                     myAnimator.ResetTrigger("Idle");
                     myAnimator.ResetTrigger("Run");
                     myAnimator.ResetTrigger("Jump");
+                    myAnimator.ResetTrigger("BeingPushed");
                     myAnimator.SetBool("Grounded", false);
                     myAnimator.SetTrigger("Wind");
                 }
