@@ -12,12 +12,9 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
 
-    private void Awake() {
-        textBackground = GameObject.Find("TextBackground");
-    }
     void Update()
     {
-        if(isInRange)
+        if (isInRange)
         {
             if (Input.GetKeyDown(interactKey))
             {
@@ -25,24 +22,34 @@ public class Interactable : MonoBehaviour
                 indicationText.text = "";
                 interactAction.Invoke();
             }
-        }    
+        }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Player"))
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
             isInRange = true;
             textBackground.SetActive(true);
             indicationText.text = "Press " + interactKey.ToString() + " to interact";
-        }    
+        }
     }
 
-    private void OnTriggerExit(Collider other) {
-        if(other.CompareTag("Player"))
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
             isInRange = false;
-            textBackground.SetActive(false);
+            if (textBackground == null)
+            {
+                Debug.Log(gameObject.name);
+            }
+            else
+            {
+                textBackground.SetActive(false);
+            }
+
             indicationText.text = "";
-        }    
+        }
     }
 }
