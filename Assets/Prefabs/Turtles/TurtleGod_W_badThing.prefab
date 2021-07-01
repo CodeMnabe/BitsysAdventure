@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6440803475825473111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356547057933553104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69a0f7cefd546848809b07cf01d0353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextTurtle: {fileID: 0}
+--- !u!1001 &1277502679772748839
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1572514977, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: indicationText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514977, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: textBackground
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: stopPlayer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: textBackground
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: '...This Thing is sticking
+
+        to me and it hurts'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: "I need you to gather \nall the seeds from the islands"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: 'Please make it quick,
+
+        I don''t have much time!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: 'Please make it quick,
+
+        I don''t have much time!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: Please make it quick, I don't have much time
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: Please make it quick!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: Please make it quick!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[7]
+      value: Please make it quick!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: actionAfterDialogue.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FinishGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514981, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: badThing
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514981, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: badThingAnimation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533524342860796407, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_Name
+      value: TurtleGod_W_badThing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.65019304
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7597691
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -98.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6283394778554080537, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+--- !u!1 &356547057933553104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1533524342860796407, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+  m_PrefabInstance: {fileID: 1277502679772748839}
+  m_PrefabAsset: {fileID: 0}

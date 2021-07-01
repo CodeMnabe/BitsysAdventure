@@ -7,37 +7,39 @@ public class CollectibleWorld : MonoBehaviour
     private CollectibleManager collectibleManager;
     public Collectible collectible;
 
-    [SerializeField] private Material[] myMaterial;
+    [SerializeField] private Color[] myColor;
+    [SerializeField] private Material seedMaterial;
 
     private void Awake()
     {
+        seedMaterial = GetComponent<Renderer>().material;
         collectibleManager = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<CollectibleManager>();
 
         switch (collectible.typeOfCollectible)
         {
             case TypeOfCollectible.Hidden:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[2];
+                seedMaterial.color = myColor[2];
                 break;
             case TypeOfCollectible.Match_the_Flower:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[0];
+                seedMaterial.color = myColor[0];
                 break;
             case TypeOfCollectible.Start_a_Life:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[1];
+                seedMaterial.color = myColor[1];
                 break;
             case TypeOfCollectible.Up_Challenge:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[3];
+                seedMaterial.color = myColor[3];
                 break;
             case TypeOfCollectible.No_Jump_Challenge:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[4];
+                seedMaterial.color = myColor[4];
                 break;
             case TypeOfCollectible.Light_Challenge:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[5];
+                seedMaterial.color = myColor[5];
                 break;
-            case TypeOfCollectible.Heavy_Challenge:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[6];
+            case TypeOfCollectible.Heavy_Challenge:                
+                seedMaterial.color = myColor[6];
                 break;
-            case TypeOfCollectible.Reach_the_End:
-                gameObject.GetComponent<MeshRenderer>().material = myMaterial[7];
+            case TypeOfCollectible.Reach_the_End:                
+                seedMaterial.color = myColor[7];
                 break;
             default:
                 break;

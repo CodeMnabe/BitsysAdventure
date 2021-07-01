@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8312142601373406019
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1572514977, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: indicationText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514977, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: textBackground
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: stopPlayer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: textBackground
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Do you have the seeds that I asked you for?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: 'Yes you do!!
+
+        Time to get rid of this evil thing!!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: It has been seen travelling north and it's maki...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: It has been seen travelling north and it's maki...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: actionAfterDialogue.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: actionAfterDialogue.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: actionAfterDialogue.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextTurtle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572514980, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: actionAfterDialogue.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TurtleInteractionBeginning, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533524342860796407, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_Name
+      value: TurtleGod_With_Enough_Seeds
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.65019304
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7597691
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -98.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162850350905789261, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283394778554080537, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: badThing
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283394778554080537, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+      propertyPath: otherTurtle
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6283394778554080537, guid: b615cc20402494742b75fc86a34d7968, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: b615cc20402494742b75fc86a34d7968, type: 3}

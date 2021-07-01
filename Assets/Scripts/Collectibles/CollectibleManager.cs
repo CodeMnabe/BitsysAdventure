@@ -11,6 +11,24 @@ public class CollectibleManager : MonoBehaviour
 
     public List<Collectible> collectibles = new List<Collectible>();
 
+    #region WhatTurtleToSpawn
+
+    public bool isItTimeToCheckForTheEnd = false;
+
+    [SerializeField] private GameObject noEndTurtle;
+    [SerializeField] private GameObject endTurtle;
+
+
+
+    [SerializeField] private Collectible testCollectible;
+
+    #endregion
+
+    private void Awake()
+    {
+        noEndTurtle.SetActive(false);
+        endTurtle.SetActive(false);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -20,6 +38,25 @@ public class CollectibleManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             seedTab.GetComponent<Animator>().SetBool("TabPressed", false);
+        }
+
+
+        if (endTurtle && noEndTurtle)
+        {
+            if (isItTimeToCheckForTheEnd)
+            {
+                CheckForWichTurtle();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            AddCollectibleToList(testCollectible);
+            AddCollectibleToList(testCollectible);
+            AddCollectibleToList(testCollectible);
+            AddCollectibleToList(testCollectible);
+            AddCollectibleToList(testCollectible);
+            Debug.Log(collectibles.Count);
         }
     }
     public void AddCollectibleToList(Collectible collectible)
@@ -49,6 +86,20 @@ public class CollectibleManager : MonoBehaviour
         if (collectible.collectibleNumber == 5)
         {
             seedText[4].color = new Color(255, 152, 0);
+        }
+    }
+
+    void CheckForWichTurtle()
+    {
+        if (collectibles.Count < 5)
+        {
+            noEndTurtle.SetActive(true);
+            endTurtle.SetActive(false);
+        }
+        else
+        {
+            noEndTurtle.SetActive(false);
+            endTurtle.SetActive(true);
         }
     }
 }

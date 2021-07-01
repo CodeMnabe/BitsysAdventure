@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private GameObject stopPlayer;
@@ -15,6 +16,8 @@ public class Dialogue : MonoBehaviour
 
     private bool textHasStarted;
 
+    public UnityEvent actionAfterDialogue;
+
     IEnumerator Type()
     {
         foreach (char letter in sentences[index].ToCharArray())
@@ -25,7 +28,6 @@ public class Dialogue : MonoBehaviour
     }
 
     private void Awake() {
-        textBackground = GameObject.Find("TextBackground");
         textBackground.SetActive(false);
     }
 
@@ -63,6 +65,10 @@ public class Dialogue : MonoBehaviour
             textHasStarted = false;
             index = 0;
             displayText.text = "";
+            if(actionAfterDialogue != null)
+            {
+                actionAfterDialogue.Invoke();
+            }
         }
     }
 }

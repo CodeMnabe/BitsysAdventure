@@ -9,6 +9,7 @@ TagManager:
   - MovingPlatform
   - PushableObject
   - Bush
+  - BadThing
   layers:
   - Default
   - TransparentFX

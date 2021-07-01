@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: c999948454fd5e04b978a3796b49c13c
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -7075908266737799638
+    second: Icosphere|Icosphere.001Action.001
+  - first:
+      74: 1333967994768684028
+    second: Icosphere|Icosphere.001Action.002
+  - first:
+      74: 8236681027294945441
+    second: Icosphere|Icosphere.001Action.003
+  - first:
+      74: 1517319486570724432
+    second: Icosphere|Icosphere.001Action.004
+  - first:
+      74: -3198294354124790667
+    second: Icosphere|Icosphere.001Action.005
+  - first:
+      74: 6639205238635089029
+    second: Icosphere|IcosphereAction
+  - first:
+      74: 6153352016711709195
+    second: Icosphere|IcosphereAction.001
+  - first:
+      74: -3715993071391710565
+    second: Icosphere|Shader NodetreeAction
+  - first:
+      74: -576460308630303162
+    second: Icosphere|Thing disappearing
+  - first:
+      74: 6824083036517812384
+    second: Icosphere|Warpage
+  - first:
+      74: -6072158570504185522
+    second: Icosphere.001|Icosphere.001Action.001
+  - first:
+      74: -2744354692926755182
+    second: Icosphere.001|Icosphere.001Action.002
+  - first:
+      74: -4569202929453588081
+    second: Icosphere.001|Icosphere.001Action.003
+  - first:
+      74: -6183763075700328116
+    second: Icosphere.001|Icosphere.001Action.004
+  - first:
+      74: -4599383936257721368
+    second: Icosphere.001|Icosphere.001Action.005
+  - first:
+      74: 6925238686465115197
+    second: Icosphere.001|IcosphereAction
+  - first:
+      74: -4548405415403345285
+    second: Icosphere.001|IcosphereAction.001
+  - first:
+      74: -9157881866235880303
+    second: Icosphere.001|Shader NodetreeAction
+  - first:
+      74: -5964092804215580099
+    second: Icosphere.001|Thing disappearing
+  - first:
+      74: 2969954925925755928
+    second: Icosphere.001|Warpage
+  - first:
+      74: -5856468946470301522
+    second: Icosphere.002|Icosphere.001Action.001
+  - first:
+      74: 9141265048104677832
+    second: Icosphere.002|Icosphere.001Action.002
+  - first:
+      74: 25461460755392248
+    second: Icosphere.002|Icosphere.001Action.003
+  - first:
+      74: 1908971933391283002
+    second: Icosphere.002|Icosphere.001Action.004
+  - first:
+      74: 1647048809457429421
+    second: Icosphere.002|Icosphere.001Action.005
+  - first:
+      74: 818994366839683271
+    second: Icosphere.002|IcosphereAction
+  - first:
+      74: 5861014402745310178
+    second: Icosphere.002|IcosphereAction.001
+  - first:
+      74: 4831367091437620340
+    second: Icosphere.002|Shader NodetreeAction
+  - first:
+      74: -5168389951146938709
+    second: Icosphere.002|Thing disappearing
+  - first:
+      74: 1103601173465379978
+    second: Icosphere.002|Warpage
+  - first:
+      74: -7898076800013540779
+    second: Icosphere.003|Icosphere.001Action.001
+  - first:
+      74: -205296891159391094
+    second: Icosphere.003|Icosphere.001Action.002
+  - first:
+      74: -6123574820636041512
+    second: Icosphere.003|Icosphere.001Action.003
+  - first:
+      74: 5883536177458075641
+    second: Icosphere.003|Icosphere.001Action.004
+  - first:
+      74: 8185234912744280421
+    second: Icosphere.003|Icosphere.001Action.005
+  - first:
+      74: -445684217788628846
+    second: Icosphere.003|IcosphereAction
+  - first:
+      74: -8814614107801825356
+    second: Icosphere.003|IcosphereAction.001
+  - first:
+      74: -4690097401708097956
+    second: Icosphere.003|Shader NodetreeAction
+  - first:
+      74: 1189495265342047241
+    second: Icosphere.003|Thing disappearing
+  - first:
+      74: -604520409708051875
+    second: Icosphere.003|Warpage
+  - first:
+      74: -4771052566132510996
+    second: Icosphere.004|Icosphere.001Action.001
+  - first:
+      74: 5160852708112706944
+    second: Icosphere.004|Icosphere.001Action.002
+  - first:
+      74: 6212782457852974113
+    second: Icosphere.004|Icosphere.001Action.003
+  - first:
+      74: 3698124057987278489
+    second: Icosphere.004|Icosphere.001Action.004
+  - first:
+      74: -4310032336961916224
+    second: Icosphere.004|Icosphere.001Action.005
+  - first:
+      74: 882814425311638272
+    second: Icosphere.004|IcosphereAction
+  - first:
+      74: -39984415334544388
+    second: Icosphere.004|IcosphereAction.001
+  - first:
+      74: 6332166047197827986
+    second: Icosphere.004|Shader NodetreeAction
+  - first:
+      74: 8645460139502823799
+    second: Icosphere.004|Thing disappearing
+  - first:
+      74: 4020421293186522163
+    second: Icosphere.004|Warpage
+  - first:
+      74: -5917200608342825345
+    second: Icosphere.005|Icosphere.001Action.001
+  - first:
+      74: -1812653073484337340
+    second: Icosphere.005|Icosphere.001Action.002
+  - first:
+      74: 1330592091448809109
+    second: Icosphere.005|Icosphere.001Action.003
+  - first:
+      74: -7269044156313080861
+    second: Icosphere.005|Icosphere.001Action.004
+  - first:
+      74: 7014677542696221422
+    second: Icosphere.005|Icosphere.001Action.005
+  - first:
+      74: 8349182856226586697
+    second: Icosphere.005|IcosphereAction
+  - first:
+      74: 7007982346773540610
+    second: Icosphere.005|IcosphereAction.001
+  - first:
+      74: 8101221102590398070
+    second: Icosphere.005|Shader NodetreeAction
+  - first:
+      74: 7722378869673271907
+    second: Icosphere.005|Thing disappearing
+  - first:
+      74: -8139996229419286648
+    second: Icosphere.005|Warpage
+  - first:
+      74: -3619333892320456267
+    second: Icosphere.006|Icosphere.001Action.001
+  - first:
+      74: -2440066256596976708
+    second: Icosphere.006|Icosphere.001Action.002
+  - first:
+      74: 7252680192850408821
+    second: Icosphere.006|Icosphere.001Action.003
+  - first:
+      74: 5248080725041210565
+    second: Icosphere.006|Icosphere.001Action.004
+  - first:
+      74: 2182351999075432319
+    second: Icosphere.006|Icosphere.001Action.005
+  - first:
+      74: -4623428681873974662
+    second: Icosphere.006|IcosphereAction
+  - first:
+      74: -3083585237662035833
+    second: Icosphere.006|IcosphereAction.001
+  - first:
+      74: -1362162174557005568
+    second: Icosphere.006|Shader NodetreeAction
+  - first:
+      74: 340235038648725061
+    second: Icosphere.006|Thing disappearing
+  - first:
+      74: 9002432190111095617
+    second: Icosphere.006|Warpage
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 40cf79f9cf3a1b84b95a54e5228d2366, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

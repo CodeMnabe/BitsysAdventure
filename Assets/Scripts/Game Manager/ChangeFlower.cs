@@ -5,6 +5,7 @@ using TMPro;
 
 public class ChangeFlower : MonoBehaviour
 {
+    [SerializeField] private GameObject flowerChangerBackground;
     [SerializeField] private OpenFlowerMenu menuObject;
     [SerializeField] private GameObject player;
     [SerializeField] private TextMeshProUGUI seedText;
@@ -13,7 +14,7 @@ public class ChangeFlower : MonoBehaviour
     private void Awake()
     {
         flowerChanger = player.GetComponent<FlowerPower>();
-        gameObject.SetActive(false);
+        flowerChangerBackground.SetActive(false);
     }
     
     public void ChangeFlowerButton(string flowerName){
@@ -22,7 +23,7 @@ public class ChangeFlower : MonoBehaviour
         menuObject.NormalizeCamera();
         seedText.text = "";
         seedText.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        flowerChangerBackground.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

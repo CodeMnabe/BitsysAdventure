@@ -15,12 +15,10 @@ public class FlowerPower : MonoBehaviour
     [SerializeField] private Color[] myColors;
     public enum Flower
     {
-        Dahlia,//neutral flower
+        Lily,//neutral flower
         Tulip, //Size up
-        Pansie, //Size down
-        Rose, //Extra jump height
-        Sunflower, //Look for Sun seeds, aka it points to the direction of seeds.      
-        LilyOfTheValley, //Plants a tree where your mouse is making another point that bitsy will be to swing to 
+        Poppy, //Size down
+        Waterflower, //Extra jump height
     }
 
     private void Start()
@@ -28,13 +26,13 @@ public class FlowerPower : MonoBehaviour
         playerScript = GetComponent<ThirdPersonMovement>();
         charController = GetComponent<CharacterController>();
         myTransform = GetComponent<Transform>();
-        currentFlower = Flower.Dahlia;
+        currentFlower = Flower.Lily;
     }
     private void Update()
     {
         switch (currentFlower)
         {
-            case Flower.Dahlia:
+            case Flower.Lily:
                 ResetJumpHeight();
                 ResetWeight();
                 ResetScale();
@@ -46,13 +44,13 @@ public class FlowerPower : MonoBehaviour
                 myTransform.localScale = new Vector3(1 * 1.2f, 1 * 1.2f, 1 * 1.2f);
                 backMaterial.color = myColors[1];
                 break;
-            case Flower.Pansie:
+            case Flower.Poppy:
                 ResetJumpHeight();
                 weight = 0;
                 myTransform.localScale = new Vector3(1 / 1.2f, 1 / 1.2f, 1 / 1.2f);
                 backMaterial.color = myColors[2];
                 break;
-            case Flower.Rose:
+            case Flower.Waterflower:
                 ResetScale();
                 ResetWeight();
                 playerScript.jumpHeight = playerScript.startJumpHeight * 1.8f;
@@ -67,17 +65,17 @@ public class FlowerPower : MonoBehaviour
     {
         switch (flowerName)
         {
-            case "Dahlia":
-                currentFlower = Flower.Dahlia;
+            case "Lily":
+                currentFlower = Flower.Lily;
                 break;
             case "Tulip":
                 currentFlower = Flower.Tulip;
                 break;
-            case "Pansie":
-                currentFlower = Flower.Pansie;
+            case "Poppy":
+                currentFlower = Flower.Poppy;
                 break;
-            case "Rose":
-                currentFlower = Flower.Rose;
+            case "Waterflower":
+                currentFlower = Flower.Waterflower;
                 break;
             default:
                 break;

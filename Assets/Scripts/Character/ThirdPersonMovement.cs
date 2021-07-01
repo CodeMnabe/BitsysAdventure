@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
 public class ThirdPersonMovement : MonoBehaviour
 {
     #region Platform Code
@@ -61,6 +61,11 @@ public class ThirdPersonMovement : MonoBehaviour
         HookShotFlyingPlayer,
         FirstPerson
     }
+
+    private void Awake()
+    {
+        isGrounded = true;
+    }
     void Start()
     {
         cam = Camera.main.transform;
@@ -99,9 +104,39 @@ public class ThirdPersonMovement : MonoBehaviour
                 break;
         }
     }
-
+    private float airTime;
+    private bool windIsPlaying;
     void LateUpdate()
     {
+        if (isGrounded)
+        {
+            FindObjectOfType<AudioManager>().stopSound("WindGust");
+            airTime = 1;
+            windIsPlaying = false;
+        }
+        else if (!isGrounded)
+        {
+
+            if (airTime <= 0.1)
+            {
+                if (!windIsPlaying)
+                {
+                    FindObjectOfType<AudioManager>().Play("WindGust");
+                    windIsPlaying = true;
+                }
+            }
+            else
+            {
+                airTime -= Time.deltaTime;
+            }
+
+        }
+
+
+
+
+
+
         if (activePlatform != null)
         {
             Vector3 newGlobalPlatformPoint = activePlatform.TransformPoint(activeLocalPlatformPoint);
@@ -185,6 +220,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
+    private bool playHookSound;
     private void HookShotThrow()
     {
         ChangeCrossHairColor(Color.black);
@@ -195,6 +231,10 @@ public class ThirdPersonMovement : MonoBehaviour
         hookShotTransform.localScale = new Vector3(1, 1, hookShotSize);
         hookShotTransform2.localScale = new Vector3(1, 1, hookShotSize);
 
+        if (!playHookSound)
+        {
+            HookShotThrowSound();
+        }
 
         if (hookShotSize >= Vector3.Distance(transform.position, hookShotPosition))
         {
@@ -208,8 +248,17 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
+    void HookShotThrowSound()
+    {
+        FindObjectOfType<AudioManager>().Play("RootGrowing");
+        playHookSound = true;
+    }
+
     private void HookShotMovement()
     {
+        isGrounded = false;
+        FindObjectOfType<AudioManager>().stopSound("RootGrowing");
+        playHookSound = false;
         hookShotTransform.LookAt(hookShotPosition);
         hookShotTransform2.LookAt(hookShotPosition);
         hookShotTransform.localScale = new Vector3(1, 1, Vector3.Distance(hookShotTransform.position, hookShotPosition));
@@ -294,12 +343,19 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
+
+                if (!isGrounded)
+                {
+                    FindObjectOfType<AudioManager>().Play("isGrounded");
+                }
             }
             else
             {
                 if (isGrounded)
                 {
+
                     myAnimator.SetBool("Grounded", true);
+
                     myAnimator.ResetTrigger("Jump");
                     myAnimator.ResetTrigger("BeingPushed");
                     myAnimator.ResetTrigger("Run");
@@ -307,11 +363,13 @@ public class ThirdPersonMovement : MonoBehaviour
                 }
                 else
                 {
+                    FindObjectOfType<AudioManager>().Play("isGrounded");
                     myAnimator.ResetTrigger("Idle");
                     myAnimator.ResetTrigger("Run");
                     myAnimator.ResetTrigger("Jump");
                     myAnimator.ResetTrigger("BeingPushed");
                     myAnimator.SetBool("Grounded", false);
+
                     myAnimator.SetTrigger("Wind");
                 }
 
@@ -412,6 +470,7 @@ public class ThirdPersonMovement : MonoBehaviour
         state = State.Normal;
         respawnManager.RespawnSystem();
     }
+
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

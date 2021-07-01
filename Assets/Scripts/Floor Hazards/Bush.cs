@@ -11,7 +11,6 @@ public class Bush : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             myAnimator.SetTrigger("PlayerHit");
-            Debug.Log("mia's the best");
         }
     }
 }
