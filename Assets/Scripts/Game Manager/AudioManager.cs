@@ -9,6 +9,15 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     private void Awake() {
+        DontDestroyOnLoad(this);
+        
+        GameObject[] audioManagers;
+        audioManagers = GameObject.FindGameObjectsWithTag("Audio Manager");
+
+        if(audioManagers.Length > 1)
+        {
+            Destroy(audioManagers[1]);
+        }
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();

@@ -48,16 +48,6 @@ public class CollectibleManager : MonoBehaviour
                 CheckForWichTurtle();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            AddCollectibleToList(testCollectible);
-            AddCollectibleToList(testCollectible);
-            AddCollectibleToList(testCollectible);
-            AddCollectibleToList(testCollectible);
-            AddCollectibleToList(testCollectible);
-            Debug.Log(collectibles.Count);
-        }
     }
     public void AddCollectibleToList(Collectible collectible)
     {

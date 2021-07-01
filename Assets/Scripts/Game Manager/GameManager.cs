@@ -13,12 +13,8 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         MakeTutorialAppear();
+        PauseGame();
     }
 
     [SerializeField] private GameObject tutorialUI;
@@ -27,19 +23,63 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (!isTutorialUIOn)
+            if (!isPaused)
             {
-                player.GetComponent<ThirdPersonMovement>().enabled = false;
-                tutorialUI.SetActive(true);
-                isTutorialUIOn = true;
+                if (!isTutorialUIOn)
+                {
+                    player.GetComponent<ThirdPersonMovement>().enabled = false;
+                    tutorialUI.SetActive(true);
+                    isTutorialUIOn = true;
+                }
+                else
+                {
+                    player.GetComponent<ThirdPersonMovement>().enabled = true;
+                    tutorialUI.SetActive(false);
+                    isTutorialUIOn = false;
+                }
+            }
+
+        }
+
+    }
+
+    [SerializeField] private GameObject pauseUI;
+    private bool isPaused;
+    void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                pauseUI.SetActive(true);
+                Time.timeScale = 0;
+                isPaused = true;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-                player.GetComponent<ThirdPersonMovement>().enabled = true;
-                tutorialUI.SetActive(false);
-                isTutorialUIOn = false;
+                pauseUI.SetActive(false);
+                Time.timeScale = 1;
+                isPaused = false;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
 
+    }
+
+    public void Unpause()
+    {
+        pauseUI.SetActive(false);
+        Time.timeScale = 1;
+        isPaused = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

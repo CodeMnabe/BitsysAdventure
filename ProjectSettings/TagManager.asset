@@ -10,6 +10,7 @@ TagManager:
   - PushableObject
   - Bush
   - BadThing
+  - Audio Manager
   layers:
   - Default
   - TransparentFX

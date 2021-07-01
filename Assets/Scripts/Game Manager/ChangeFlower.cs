@@ -19,12 +19,12 @@ public class ChangeFlower : MonoBehaviour
     
     public void ChangeFlowerButton(string flowerName){
         flowerChanger.SwitchFlower(flowerName);
-        player.GetComponent<ThirdPersonMovement>().isTalkingToSomeone = false;
-        menuObject.NormalizeCamera();
+        player.GetComponent<ThirdPersonMovement>().isTalkingToSomeone = false;        
         seedText.text = "";
         seedText.gameObject.SetActive(false);
         flowerChangerBackground.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        menuObject.NormalizeCamera();
     }
 }
